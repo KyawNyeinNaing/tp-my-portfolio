@@ -1,0 +1,100 @@
+.themeSwitcher {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  color: var(--text-color);
+  margin-left: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.portfolio_header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  box-shadow: var(--box-shadow);
+  background-color: var(--white);
+
+  .portfolio_nav {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+
+    .portfolio_nav_wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        list-style: none;
+        li {
+          a {
+            font-size: 16px;
+            padding: 0.7rem 20px;
+            color: var(--text-color);
+            font-weight: 400;
+            opacity: 1;
+          }
+        }
+      }
+
+      .portfolio_nav_logo {
+        color: var(--text-color-secondary);
+        padding: 1rem 0;
+        font-size: 24px;
+        display: inline-block;
+        margin-right: 1rem;
+        line-height: inherit;
+        white-space: nowrap;
+        font-weight: 900;
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 40px;
+          height: 40px;
+          background: #3e64ff;
+          transform: translateY(-50%);
+          border-radius: 50%;
+        }
+
+        .portfolio_nav_logo_name {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          transform: translateX(10px);
+          color: var(--text-color-secondary);
+
+          span {
+            color: var(--white);
+          }
+        }
+      }
+    }
+  }
+}
+
+.portfolio_footer {
+  text-align: center;
+  font-size: 0.75rem;
+}

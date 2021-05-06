@@ -1,0 +1,104 @@
+.portfolio_img {
+  width: 100%;
+  position: relative;
+
+  img {
+    width: 100%;
+    box-shadow: 0 2px 5px 0 rgb(0, 0, 0, 0.16), 0 2px 10px 0 rgb(0, 0, 0, 0.12);
+  }
+}
+
+.portfolio_detail_panel {
+  .portfolio_detail_panel_heading {
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--text-color-secondary);
+
+    @media screen and (min-width: 768px) {
+      font-size: 50px;
+    }
+  }
+  .portfolio_detail_panel_row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+
+    .portfolio_detail_panel_label {
+      width: 130px;
+      color: var(--text-color-secondary);
+      font-weight: 600;
+    }
+
+    .portfolio_detail_panel_value {
+      color: var(--text-color);
+    }
+  }
+
+  .portfolio_complete_project {
+    p {
+      margin-bottom: 15px;
+      font-size: 20px;
+      color: var(--text-color-secondary);
+
+      span {
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+    }
+
+    .portfolio_download {
+      background-color: var(--secondary-color);
+      color: var(--white);
+      border: 1px solid;
+      transition: box-shadow 0.3s ease, color 0.3s ease;
+
+      display: inline-block;
+      cursor: pointer;
+      border-radius: var(--radius);
+      box-shadow: var(--box-shadow);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+      padding: 1rem;
+      margin-top: 15px;
+
+      &:hover {
+        box-shadow: 0px 24px 36px -11px rgba(0, 0, 0, 0.09);
+      }
+    }
+  }
+}
+
+.portfolio_sidenav_sticky {
+  position: sticky;
+  top: 130px;
+  margin: 0;
+  .portfolio_sidenav_wrap {
+
+    .portfolio_sidenav_label {
+      position: relative;
+      cursor: pointer;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-color-secondary);
+      transition: all 0.3s ease;
+
+      &.active {
+        color: var(--primary-color);
+        margin-left: 20px;
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: -24px;
+          width: 20px;
+          height: 2px;
+          background-color: var(--primary-color);
+        }
+      }
+    }
+  }
+}
