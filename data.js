@@ -1,4 +1,4 @@
-const resume = [
+export const resume = [
   {
     name: 'Educations',
     data: [
@@ -99,4 +99,144 @@ const resume = [
     ]
   }
 ]
-export default resume
+
+export const projects = [
+  {
+    project_name: 'Medical Myanmar',
+    project_type: 'Medical',
+    project_image: '/uploads/project-2.jpg',
+    project_link: '/',
+    techanical: [
+      'React Js'
+    ]
+  },
+  {
+    project_name: 'Zizawa',
+    project_type: 'Medical',
+    project_image: '/uploads/project-3.jpg',
+    project_link: '/',
+    techanical: [
+      'React Js'
+    ]
+  },
+  {
+    project_name: 'Stead Fast',
+    project_type: 'Medical',
+    project_image: '/uploads/project-4.jpg',
+    project_link: '/',
+    techanical: [
+      'React Js'
+    ]
+  },
+  {
+    project_name: 'Insurance Company (Singapore)',
+    project_type: 'Insurance',
+    project_image: '/uploads/project-1.jpg',
+    project_link: '/',
+    techanical: [
+      'pug (template engine)',
+      'scss',
+      'javascript',
+      'jquery',
+    ]
+  },
+  {
+    project_name: 'Aung Myin Par Say',
+    project_type: 'Travel',
+    project_image: '/uploads/project-5.jpg',
+    project_link: '/',
+    techanical: [
+      'javascript',
+      'jquery',
+      'php'
+    ]
+  },
+  {
+    project_name: 'Shwe Chan Wii',
+    project_type: 'Travel',
+    project_image: '/uploads/project-5.jpg',
+    project_link: '/',
+    techanical: [
+      'javascript',
+      'jquery',
+      'php'
+    ]
+  },
+  {
+    project_name: 'Grand Asean',
+    project_type: 'Travel',
+    project_image: '/uploads/project-5.jpg',
+    project_link: '/',  
+    techanical: [
+      'javascript',
+      'jquery',
+      'php'
+    ]
+  },
+  {
+    project_name: 'Myanmar Fisca Security & Communication',
+    project_type: 'Security',
+    project_image: '/uploads/project-5.jpg',
+    project_link: '/',
+    techanical: [
+      'javascript',
+      'jquery',
+      'php'
+    ]
+  },
+  {
+    project_name: 'Yatanarbon Myanmar Security & Communication',
+    project_type: 'Security',
+    project_image: '/uploads/project-5.jpg',
+    project_link: '/',
+    techanical: [
+      'javascript',
+      'jquery',
+      'php'
+    ]
+  },
+  {
+    project_name: 'Ancient Bagan',
+    project_type: 'Hotel',
+    project_image: '/uploads/project-5.jpg',
+    project_link: '/',
+    techanical: [
+      'javascript',
+      'jquery',
+      'php'
+    ]
+  },
+  {
+    project_name: 'Seabreeze Ngapali',
+    project_type: 'Hotel',
+    project_image: '/uploads/project-5.jpg',
+    project_link: '/',
+    techanical: [
+      'javascript',
+      'jquery',
+      'php'
+    ]
+  },
+  {
+    project_name: 'Hsu Blog',
+    project_type: 'blog',
+    project_image: '/uploads/project-5.jpg',
+    project_link: '/',
+    techanical: [
+      'javascript',
+      'jquery',
+      'php'
+    ]
+  },
+  {
+    project_name: 'Yangon optic',
+    project_type: 'Security',
+    project_image: '/uploads/project-5.jpg',
+    project_link: '/',
+    techanical: [
+      'javascript',
+      'jquery',
+      'php'
+    ]
+  },
+]

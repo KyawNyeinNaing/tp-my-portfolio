@@ -6,14 +6,14 @@ import { Col, Container, Row, Section } from '../components'
 import styles from '../styles/About.module.scss'
 import { GiArchiveResearch } from 'react-icons/gi'
 
-import restResumes from '../../data'
+import { resume, projects } from '../../data'
 
 const About = () => {
   const [show, setShow] = useState('education')
 
-  const filteredEdu = restResumes?.filter(resume => resume?.name === 'Educations')
-  const filteredExp = restResumes?.filter(resume => resume?.name === 'Experience')
-  const filteredSkill = restResumes?.filter(resume => resume?.name === 'Skills')
+  const filteredEdu = resume?.filter(resume => resume?.name === 'Educations')
+  const filteredExp = resume?.filter(resume => resume?.name === 'Experience')
+  const filteredSkill = resume?.filter(resume => resume?.name === 'Skills')
 
   return (
     <Layout title='About' className='poryfolio-about'>
@@ -131,31 +131,33 @@ const About = () => {
         </Container>
       </Section>
 
-      <Section style={{paddingBottom: 0}}>
+      <Section style={{ paddingBottom: 0 }}>
         <div className={styles.portfolio_project_wrapper}>
           <h2 className={styles.portfolio_project_heading}>Projects</h2>
           <p>That's what I did more projects</p>
 
           <div className={styles.portfolio_project_row}>
-            {[1, 2, 3, 4, 5, 6].map(arr => (
-              <Col className={styles.portfolio_project_col} md='4'>
-                <Link href='/project'>
-                  <a>
-                    <div className={styles.portfolio_project_image}
-                      style={
-                        { backgroundImage: 'url("/uploads/project-2.jpg")' }
-                      }
-                    >
-                      <div className={styles.portfolio_overlay} />
-                      <div className={styles.portfolio_project_name}>
-                        <h3>Insurance Company (Singapore)</h3>
-                        <span>Insurance</span>
+            {projects?.length > 0 &&
+              projects?.map(project => (
+                <Col className={styles.portfolio_project_col} md='4' key={project.project_name}>
+                  <Link href={project?.project_link}>
+                    <a target='_blank'>
+                      <div className={styles.portfolio_project_image}
+                        style={
+                          { backgroundImage: `url(${project?.project_image})` }
+                        }
+                      >
+                        <div className={styles.portfolio_overlay} />
+                        <div className={styles.portfolio_project_name}>
+                          <h3>{project?.project_name}</h3>
+                          <span>{project?.project_type}</span>
+                        </div>
                       </div>
-                    </div>
-                  </a>
-                </Link>
-              </Col>
-            ))}
+                    </a>
+                  </Link>
+                </Col>
+              ))
+            }
           </div>
         </div>
       </Section>
