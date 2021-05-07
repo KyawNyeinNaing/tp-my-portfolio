@@ -98,7 +98,7 @@ const About = () => {
             <Col md='9'>
               {show === 'education' && <Education education={filteredEdu} />}
               {show === 'experience' && <Experience experience={filteredExp} />}
-              {show === 'skill' && <Skill skill={filteredSkill} />}
+              {show === 'skill' && <Skill skills={filteredSkill} />}
             </Col>
           </Row>
         </Container>

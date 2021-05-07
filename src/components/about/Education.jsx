@@ -2,7 +2,6 @@ import styles from './About.module.scss'
 import { FaGem } from 'react-icons/fa'
 
 const Education = ({ education }) => {
-  console.log(`education`, education?.data?.length)
 
   return (
     <div className={styles.portfolio_resume_panel}>

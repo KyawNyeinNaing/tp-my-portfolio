@@ -66,7 +66,7 @@ const resume = [
       },
       {
         language: 'React Js',
-        skill: '809'
+        skill: '80'
       },
       {
         language: 'Next Js',

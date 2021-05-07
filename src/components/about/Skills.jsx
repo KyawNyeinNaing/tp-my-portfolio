@@ -1,25 +1,32 @@
+import styled from 'styled-components'
 import { Row, Col } from '../core'
 import styles from './About.module.scss'
 
-const Skills = () => {
+const ProgressBar = styled.div`
+  width: ${props => props?.skill}%;
+`
+
+const Skills = ({ skills }) => {
   return (
     <div className={styles.portfolio_resume_panel}>
-      <h2 className={styles.portfolio_resume_panel_heading}>Education</h2>
+      <h2 className={styles.portfolio_resume_panel_heading}>{skills?.[0]?.name}</h2>
 
       <Row>
-        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(skill => (
-          <Col md='6'>
-            <div className={styles.portfolio_progress_panel}>
-              <div className={styles.portfolio_progress_heading}>
-                <h5 className={styles.portfolio_progress_heading}>Javascript</h5>
-                <span>50%</span>
+        {skills?.[0]?.skills?.length > 0 &&
+          skills?.[0]?.skills?.map(skill => (
+            <Col md='6'>
+              <div className={styles.portfolio_progress_panel}>
+                <div className={styles.portfolio_progress_heading}>
+                  <h5 className={styles.portfolio_progress_heading}>{skill?.language}</h5>
+                  <span>{skill?.skill} %</span>
+                </div>
+                <div className={styles.portfolio_progress_wrapper}>
+                  <ProgressBar className={styles.portfolio_progress_bar} skill={skill?.skill} />
+                </div>
               </div>
-              <div className={styles.portfolio_progress_wrapper}>
-                <div className={styles.portfolio_progress_bar} />
-              </div>
-            </div>
-          </Col>
-        ))}
+            </Col>
+          ))
+        }
       </Row>
     </div>
   )

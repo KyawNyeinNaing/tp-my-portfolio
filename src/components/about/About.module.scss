@@ -1,7 +1,7 @@
 .portfolio_resume_panel {
   .portfolio_resume_panel_heading {
     position: relative;
-    font-weight: 800px;
+    font-weight: 800;
     font-size: 30px;
     margin-bottom: 30px;
     color: var(--primary-color);
@@ -78,6 +78,10 @@
       h5 {
         margin-bottom: 0;
       }
+
+      span {
+        font-size: 13px;
+      }
     }
 
     .portfolio_progress_wrapper {
@@ -86,6 +90,7 @@
       background-color: var(--text-color);
       overflow: hidden;
       border-radius: var(--radius);
+      display: flex;
 
       .portfolio_progress_bar {
         background-color: var(--primary-color);

@@ -4,7 +4,7 @@ import { inputGeneral, colors, media, fontSize, fontWeight } from '../constant'
 
 const TableContainer = styled.table`
   width: 100%;
-  border: ${inputGeneral.border} ${colors.light};
+  border: 1px solid ${colors.light};
   font-size: ${fontSize.md}px;
   width: 100%;
   border-collapse: collapse;
@@ -20,8 +20,8 @@ const TableContainer = styled.table`
 `
 
 const Tr = styled.tr`
-  border-bottom: ${inputGeneral.border} ${colors.light};
-  border: ${inputGeneral.border} ${colors.light};
+  border-bottom: 1px solid ${colors.light};
+  border: 1px solid ${colors.light};
   border: ${props => props.border};
   @media screen and (min-width: ${media.md}px) {
     display: table-row;
@@ -158,7 +158,7 @@ const Td = styled(Th)`
   }
 
   span {
-    border-bottom: ${inputGeneral.border} ${colors.light};
+    border-bottom: 1px solid ${colors.light};
     display: inline-block;
   }
 `

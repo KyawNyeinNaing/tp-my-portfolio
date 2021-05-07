@@ -17,15 +17,15 @@ const InputGroup = styled.div`
       display: block;
       width: 100%;
       height: 40px;
-      padding: ${inputGeneral.padding};
+      padding: 7px 15px;
       font-size: ${fontSize.md}px;
       font-weight: ${fontWeight.md};
       line-height: 1.5;
       color: ${colors.inputColor};
       background-color: ${colors.white};
       background-clip: padding-box;
-      border: ${inputGeneral.border} ${colors.whisper};
-      transition: ${inputGeneral.transition};
+      border: 1px solid ${colors.whisper};
+      transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
       outline: 0;
       margin-top: 3px;
       &:disabled {
@@ -78,7 +78,14 @@ const InputGroup = styled.div`
     }
 
     label {
-      ${inputGeneral.checkLabel}
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 0;
+      width: auto;
+      text-align: left;
+      cursor: pointer;
+      text-transform: lowercase;
+      user-select: none;
 
       &:before {
         content: '';
@@ -133,7 +140,14 @@ const InputGroup = styled.div`
     }
 
     label {
-      ${inputGeneral.checkLabel}
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 0;
+      width: auto;
+      text-align: left;
+      cursor: pointer;
+      text-transform: lowercase;
+      user-select: none;
 
       &:before,
       &:after {
@@ -178,16 +192,16 @@ const Input = styled.input`
   display: block;
   width: 100%;
   height: 40px;
-  padding: ${inputGeneral.padding};
+  padding: 7px 15px;
   font-size: ${fontSize.md}px;
   font-weight: ${fontWeight.md};
   line-height: 1.5;
   color: ${colors.inputColor};
   background-color: ${colors.white};
   background-clip: padding-box;
-  border: ${inputGeneral.border} ${colors.whisper};
+  border: 1px solid ${colors.whisper};
   border-radius: .3rem;
-  transition: ${inputGeneral.transition};
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   outline: 0;
   &:disabled {
     background: ${colors.smoke};
