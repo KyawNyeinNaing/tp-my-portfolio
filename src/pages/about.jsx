@@ -4,13 +4,12 @@ import Layout from '../layout'
 import { Education, Experience, Skill } from '../components/about'
 import { Col, Container, Row, Section } from '../components'
 import styles from '../styles/About.module.scss'
+import { GiArchiveResearch } from 'react-icons/gi'
 
 import restResumes from '../../data'
 
 const About = () => {
   const [show, setShow] = useState('education')
-
-  console.log(restResumes)
 
   const filteredEdu = restResumes?.filter(resume => resume?.name === 'Educations')
   const filteredExp = restResumes?.filter(resume => resume?.name === 'Experience')
@@ -102,6 +101,63 @@ const About = () => {
             </Col>
           </Row>
         </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <Row>
+            <Col space='12'>
+              <div className={styles.portfolio_service_wrapper}>
+                <h1 className={styles.portfolio_service_heading}>Services</h1>
+                <p className={styles.portfolio_service_desc}>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                <Row className={styles.portfolio_service_row}>
+                  <Col md='5'>
+                    <div className={styles.portfolio_service}>
+                      <GiArchiveResearch />
+                      <div className={styles.portfolio_service_desc}>
+                        <h5 className={styles.portfolio_service_desc_title}>
+                          Web Developer
+                        </h5>
+                        <p>
+                          A small river named Duden flows by their place and supplies it with the necessary regelialia.
+                        </p>
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </Section>
+
+      <Section style={{paddingBottom: 0}}>
+        <div className={styles.portfolio_project_wrapper}>
+          <h2 className={styles.portfolio_project_heading}>Projects</h2>
+          <p>That's what I did more projects</p>
+
+          <div className={styles.portfolio_project_row}>
+            {[1, 2, 3, 4, 5, 6].map(arr => (
+              <Col className={styles.portfolio_project_col} md='4'>
+                <Link href='/project'>
+                  <a>
+                    <div className={styles.portfolio_project_image}
+                      style={
+                        { backgroundImage: 'url("/uploads/project-2.jpg")' }
+                      }
+                    >
+                      <div className={styles.portfolio_overlay} />
+                      <div className={styles.portfolio_project_name}>
+                        <h3>Insurance Company (Singapore)</h3>
+                        <span>Insurance</span>
+                      </div>
+                    </div>
+                  </a>
+                </Link>
+              </Col>
+            ))}
+          </div>
+        </div>
       </Section>
     </Layout>
   )

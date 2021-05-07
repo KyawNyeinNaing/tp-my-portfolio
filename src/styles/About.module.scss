@@ -76,7 +76,6 @@
   top: 130px;
   margin: 0;
   .portfolio_sidenav_wrap {
-
     .portfolio_sidenav_label {
       position: relative;
       cursor: pointer;
@@ -97,6 +96,132 @@
           width: 20px;
           height: 2px;
           background-color: var(--primary-color);
+        }
+      }
+    }
+  }
+}
+
+.portfolio_service_wrapper {
+  text-align: center;
+  .portfolio_service_heading {
+    font-weight: 700;
+    font-size: 50px;
+    margin-bottom: 1.5rem;
+  }
+
+  .portfolio_service_desc {
+    margin-bottom: 3rem;
+  }
+
+  .portfolio_service_row {
+    justify-content: center;
+
+    .portfolio_service {
+      margin-bottom: 40px;
+      padding: 2em;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+      svg {
+        color: var(--primary-color);
+        width: 60px;
+        height: 60px;
+      }
+
+      .portfolio_service_desc {
+        .portfolio_service_desc_title {
+          position: relative;
+          font-size: 13px;
+          font-weight: 500;
+          line-height: 1.3;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          color: var(--text-color-secondary);
+          margin-bottom: 3rem;
+
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            right: 0;
+            width: 30px;
+            height: 1px;
+            background: var(--text-color-secondary);
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+.portfolio_project_wrapper {
+  text-align: center;
+
+  .portfolio_project_heading {
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+  .portfolio_project_row {
+    display: flex;
+    flex-wrap: wrap;
+
+    .portfolio_project_col {
+      padding: 0;
+    }
+
+    .portfolio_project_image {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      position: relative;
+      width: 100%;
+      height: 350px;
+      margin-bottom: 0;
+      z-index: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+
+      &:hover {
+        .portfolio_overlay,
+        .portfolio_project_name {
+          opacity: 1;
+        }
+      }
+
+      .portfolio_overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        z-index: -1;
+        background-color: rgba(220, 220, 220, 0.38);
+        transition: opacity 0.3s ease;
+      }
+
+      .portfolio_project_name {
+        opacity: 0;
+        transition: all 0.3s ease;
+
+        h3 {
+          font-size: 20px;
+          font-weight: 600;
+        }
+
+        span {
+          color: #696868;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-size: 12px;
+          font-weight: 600;
+          transition: all 0.3s ease;
         }
       }
     }
