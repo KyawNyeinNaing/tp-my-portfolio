@@ -2,8 +2,9 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { Main, Copyright, Container, Row, Col, MenuIcon } from '../components'
-import { openDrawer } from '../components/utils'
+import { openDrawer, closeDrawer } from '../components/utils'
 import styles from './Layout.module.scss'
+import { FcInfo } from 'react-icons/fc'
 import { MdBrightnessMedium } from 'react-icons/md'
 import { FaPhoneAlt, FaMailBulk, FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa'
 
@@ -15,10 +16,6 @@ const Layout = ({ children, title, keyword, desc, className }) => {
     setTheme(localStorage.getItem('theme'))
 
     window.addEventListener('openDrawer', openDrawer())
-
-    return () => {
-      window.removeEventListener('openDrawer', openDrawer())
-    }
 
   }, [])
 
@@ -61,13 +58,16 @@ const Layout = ({ children, title, keyword, desc, className }) => {
                     </a>
                   </Link>
                   <ul>
-                    <li>
+                    <li onClick={() => closeDrawer()}>
+                      <FcInfo />
                       <Link href='/about'>About</Link>
                     </li>
-                    <li>
+                    <li onClick={() => closeDrawer()}>
+                      <FcInfo />
                       <Link href='/about#project'>Projects</Link>
                     </li>
-                    <li>
+                    <li onClick={() => closeDrawer()}>
+                      <FcInfo />
                       <Link href="/contact">Contact me</Link>
                     </li>
                     <li className={styles.themeSwitcher} onClick={switchTheme}>

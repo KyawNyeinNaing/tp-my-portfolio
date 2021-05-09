@@ -1,6 +1,7 @@
-const select_ele = ele => (
+const selectElement = ele => (
   document.querySelector(ele) &&
   document.querySelector(ele).addEventListener('click', () => {
+    console.log('click')
     document.querySelector('body')?.classList.toggle('open-drawer')
     document.querySelector('.burger-wrap')?.classList.toggle('open-wrap')
   })
@@ -18,8 +19,8 @@ const navSticky = () => {
 
 const openDrawer = () => {
   let sp_btn = document.querySelectorAll('.sp-drawer')
-  select_ele('.menu-btn')
-  select_ele('.burger-wrap')
+  selectElement('.menu-btn')
+  selectElement('.burger-wrap')
 
   if (sp_btn) {
     for (let i = 0; i < sp_btn.length; i++) {

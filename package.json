@@ -5,11 +5,16 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^10.2.0",
     "@zeit/next-sass": "^1.0.1",
     "babel-plugin-styled-components": "^1.12.0",
+    "cross-env": "^7.0.3",
     "formik": "^2.2.6",
     "next": "10.2.0",
     "nprogress": "^0.2.0",
