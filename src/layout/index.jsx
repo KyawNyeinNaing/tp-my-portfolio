@@ -10,7 +10,7 @@ import { FaPhoneAlt, FaMailBulk, FaFacebookF, FaTwitter, FaInstagram } from 'rea
 
 const Layout = ({ children, title, keyword, desc, className }) => {
   const [theme, setTheme] = useState('light')
-  
+
   useEffect(() => {
     localStorage.setItem('theme', theme)
 
@@ -72,8 +72,8 @@ const Layout = ({ children, title, keyword, desc, className }) => {
                       <Link href="/contact">Contact me</Link>
                     </li>
                     <li className={styles.themeSwitcher} onClick={switchTheme}>
-                      {theme === 'dark' && <BsToggleOn  className={styles.themeSwitcher_svg}/>}
-                      {theme === 'light' && <BsToggleOff  className={styles.themeSwitcher_svg}/>}
+                      {theme === 'dark' && <BsToggleOn className={styles.themeSwitcher_svg} />}
+                      {theme === 'light' && <BsToggleOff className={styles.themeSwitcher_svg} />}
                     </li>
                   </ul>
                   <MenuIcon className={`menu-btn ${styles.portfolio_menu_btn}`}>
