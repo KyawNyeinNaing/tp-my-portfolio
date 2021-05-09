@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600;800&display=swap");
 
 :root {
   --text-color: #999999;
@@ -23,7 +23,7 @@
 
   --background-theme-color: #252329;
 
-  --white: #000000;
+  --white: #252329;
 }
 
 html,
@@ -31,6 +31,16 @@ body {
   background-color: var(--background-theme-color);
   color: var(--text-color);
   transition: all 0.3s ease;
+
+  &.open-drawer {
+    header {
+      nav {
+        .menu-btn {
+          border-color: var(--text-color-secondary) !important;
+        }
+      }
+    }
+  }
 }
 
 p {
@@ -43,15 +53,44 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
   color: var(--text-color-secondary);
   line-height: 1.5;
   margin-top: 0;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 ul {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+#nprogress {
+  .bar {
+    background: transparent;
+
+    .peg {
+      box-shadow: none;
+    }
+  }
+
+  .spinner {
+
+    .spinner-icon {
+      width: 35px;
+      height: 35px;
+      border-top-color: var(--text-color);
+      border-left-color: var(--text-color);
+    }
+  }
 }

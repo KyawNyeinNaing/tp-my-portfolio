@@ -12,7 +12,7 @@ const colors = {
   white: '#ffffff',
   gray: '#6c757d',
   darkGray: '#343a40',
-  primary: '#007bff',
+  primary: '#52b7ff',
   secondary: '#6c757d',
   success: '#28a745',
   info: '#17a2b8',

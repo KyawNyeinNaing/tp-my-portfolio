@@ -70,9 +70,6 @@ const Home = () => {
 
   return (
     <HomeLayout title='Portfolio' data='/uploads/banner.jpg'>
-      <div className={styles.portfolio_overlay_left} />
-      <div className={styles.portfolio_overlay_right} />
-
       <Section>
         <Container>
           <Row>
@@ -93,7 +90,9 @@ const Home = () => {
               <div className={styles.portfolio_mouse}>
                 <div className={styles.portfolio_mouse_icon}>
                   <Link href='/about'>
-                    <FaLongArrowAltDown />
+                    <a>
+                      <FaLongArrowAltDown />
+                    </a>
                   </Link>
                 </div>
               </div>

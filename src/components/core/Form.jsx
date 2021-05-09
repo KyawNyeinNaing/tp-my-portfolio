@@ -199,7 +199,7 @@ const Input = styled.input`
   color: ${colors.inputColor};
   background-color: ${colors.white};
   background-clip: padding-box;
-  border: 1px solid ${colors.whisper};
+  border: 1px solid #ced4da;
   border-radius: .3rem;
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   outline: 0;

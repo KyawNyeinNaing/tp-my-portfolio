@@ -5,7 +5,7 @@ const percent = (val) => Number(val / 12) * 100
 
 const Main = styled.main`
   min-height: calc(100vh);
-  margin-top: 62px;
+  transform: translateY(62px);
 `
 
 const Section = styled.section`

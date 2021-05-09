@@ -1,19 +1,27 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import styled from 'styled-components'
-import { Main, Copyright, Container, Row, Col } from '../components'
-import { MdBrightnessMedium } from 'react-icons/md'
 import { useEffect, useState } from 'react'
+import { Main, Copyright, Container, Row, Col, MenuIcon } from '../components'
+import { openDrawer } from '../components/utils'
 import styles from './Layout.module.scss'
+import { MdBrightnessMedium } from 'react-icons/md'
+import { FaPhoneAlt, FaMailBulk, FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa'
 
 const Layout = ({ children, title, keyword, desc, className }) => {
   const [theme, setTheme] = useState('light')
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
-
     setTheme(localStorage.getItem('theme'))
+
+    window.addEventListener('openDrawer', openDrawer())
+
+    return () => {
+      window.removeEventListener('openDrawer', openDrawer())
+    }
+
   }, [])
+
 
   const switchTheme = () => {
     if (theme === 'light') {
@@ -57,7 +65,7 @@ const Layout = ({ children, title, keyword, desc, className }) => {
                       <Link href='/about'>About</Link>
                     </li>
                     <li>
-                      <Link href='/project'>Projects</Link>
+                      <Link href='/about#project'>Projects</Link>
                     </li>
                     <li>
                       <Link href="/contact">Contact me</Link>
@@ -66,6 +74,9 @@ const Layout = ({ children, title, keyword, desc, className }) => {
                       <MdBrightnessMedium />
                     </li>
                   </ul>
+                  <MenuIcon className={`menu-btn ${styles.portfolio_menu_btn}`}>
+                    <div className="menu-icon" />
+                  </MenuIcon>
                 </div>
               </Col>
             </Row>
@@ -76,7 +87,57 @@ const Layout = ({ children, title, keyword, desc, className }) => {
         {children}
       </Main>
       <footer className={styles.portfolio_footer}>
-        <Copyright data='Thet Pai' />
+        <Copyright data='Thet Pai'>
+          <Container>
+            <Row>
+              <Col md='6'>
+                <div className={styles.portfolio_footer_contact_pannel}>
+                  <h2 className={styles.portfolio_nav_logo_heading}>About</h2>
+                  <p>I always wanted to be a great developer.</p>
+
+                  <div className={styles.portfolio_footer_contact_social}>
+                    <Link href='https://www.facebook.com/kyawnyein.naing.7'>
+                      <a target='_blank'>
+                        <FaFacebookF />
+                      </a>
+                    </Link>
+                    <Link href='https://twitter.com/ThetPai95'>
+                      <a target='_blank'>
+                        <FaTwitter />
+                      </a>
+                    </Link>
+                    <Link href='https://www.instagram.com/oo_thet_pai/'>
+                      <a target='_blank'>
+                        <FaInstagram />
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+              </Col>
+              <Col md='6'>
+                <div className={styles.portfolio_footer_contact_pannel}>
+                  <h2 className={styles.portfolio_nav_logo_heading}>Have a Quations?</h2>
+                  <div className={styles.portfolio_footer_contact}>
+                    <FaPhoneAlt />
+                    <div className={styles.portfolio_footer_contact_text}>
+                      <Link href='tel:+959420170266'>
+                        <a>+959-42017-026-6</a>
+                      </Link>
+                    </div>
+                  </div>
+                  <div className={styles.portfolio_footer_contact}>
+                    <FaMailBulk />
+                    <div className={styles.portfolio_footer_contact_text}>
+                      <Link href='mailto:thetpai.tp27@gmail.com'>
+                        <a>thetpai.tp27@gmail.com</a>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </Copyright>
       </footer>
     </article>
   )

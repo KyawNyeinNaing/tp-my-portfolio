@@ -5,7 +5,7 @@ import { fontSize, fontWeight, general, colors } from '../constant'
 const Button = styled.button`
   cursor: pointer;
   min-width: 150px;
-  min-height: 40px;
+  min-height: 50px;
   padding: 0 20px;
   display: inline-block;
   border: 2px solid transparent;
@@ -21,6 +21,11 @@ const Button = styled.button`
   &.primary {
     border: ${general.border} ${colors.primary};
     background-color: ${colors.primary};
+    color: ${colors.white};
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
 
     &:hover {
       background-color: ${rgba(colors.primary, .7)};

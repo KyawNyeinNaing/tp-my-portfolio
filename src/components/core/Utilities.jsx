@@ -1,5 +1,50 @@
 import styled from 'styled-components'
-import { fontSize, fontWeight, colors } from '../constant'
+import { fontSize, fontWeight, colors, media } from '../constant'
+
+const MenuIcon = styled.div`
+  &.menu-btn {
+    width: 35px;
+    height: 35px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    z-index: 9999;
+    margin-left: 20px;
+    @media screen and (min-width: ${media.lg}px) {
+      display: none;
+      margin-left: 0;
+    }
+    .menu-icon {
+      width: 30px;
+      height: 3px;
+      background: ${colors.primary};
+      border-radius: 5px;
+      transition: all .2s ease-in-out;
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 25px;
+        height: 3px;
+        background: ${colors.primary};
+        border-radius: 5px;
+        transition: all .2s ease-in-out;
+      }
+
+      &:before {
+        transform: translateY(-8px);
+      }
+
+      &:after {
+        transform: translateY(8px);
+      }
+    }
+  }
+`
 
 const Quantity = styled.div`
   .quantity-wrap {
@@ -92,6 +137,7 @@ const CopyrightStyled = styled.div`
 const Copyright = props => {
   return (
     <CopyrightStyled {...props}>
+      {props?.children}
       <span>© {new Date().getFullYear()} created by {props?.data}</span>
     </CopyrightStyled>
   )
@@ -99,6 +145,7 @@ const Copyright = props => {
 
 
 export {
+  MenuIcon,
   Quantity,
   RTEContent,
   Copyright,

@@ -20,7 +20,6 @@
   position: fixed;
   top: 0;
   z-index: 999;
-  box-shadow: var(--box-shadow);
   background-color: var(--white);
 
   .portfolio_nav {
@@ -38,16 +37,30 @@
       justify-content: space-between;
 
       ul {
+        width: 100%;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        flex-direction: column;
         padding: 0;
         list-style: none;
+        align-items: flex-start;
+        justify-content: center;
+
+        position: fixed;
+        top: 0;
+        left: 100%;
+
+        @media screen and (min-width: 768px) {
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-end;
+          position: initial;
+        }
+
         li {
           a {
             font-size: 16px;
             padding: 0.7rem 20px;
-            color: var(--text-color);
+            color: var(--text-color-secondary);
             font-weight: 400;
             opacity: 1;
           }
@@ -90,11 +103,86 @@
           }
         }
       }
+
+      .portfolio_menu_btn {
+        div {
+          background: var(--text-color-secondary);
+          &:before,
+          &:after {
+            background: var(--text-color-secondary) !important;
+          }
+        }
+      }
     }
   }
 }
 
 .portfolio_footer {
-  text-align: center;
   font-size: 0.75rem;
+  transform: translateY(62px);
+
+  .portfolio_footer_contact_pannel {
+    margin-bottom: 25px;
+
+    .portfolio_nav_logo_heading {
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    p {
+      text-align: left;
+    }
+
+    .portfolio_footer_contact_social {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      a {
+        position: relative;
+        color: rgba(255, 255, 255, 0.6);
+        background: rgba(255, 255, 255, 0.1);
+        height: 50px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-right: 20px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        svg {
+          width: 25px;
+          height: 20px;
+        }
+      }
+    }
+
+    .portfolio_footer_contact {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      svg {
+        width: 25px;
+        height: 20px;
+      }
+
+      .portfolio_footer_contact_text {
+        font-size: 16px;
+        margin-left: 10px;
+
+        a {
+          color: var(--text-color);
+        }
+      }
+    }
+  }
 }

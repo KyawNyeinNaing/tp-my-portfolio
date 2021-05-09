@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Layout from '../layout'
 import { Education, Experience, Skill } from '../components/about'
-import { Col, Container, Row, Section } from '../components'
+import { Button, Col, Container, Row, Section } from '../components'
 import styles from '../styles/About.module.scss'
 import { GiArchiveResearch } from 'react-icons/gi'
 
@@ -10,13 +10,18 @@ import { resume, projects } from '../../data'
 
 const About = () => {
   const [show, setShow] = useState('education')
+  const [theme, setTheme] = useState()
 
   const filteredEdu = resume?.filter(resume => resume?.name === 'Educations')
   const filteredExp = resume?.filter(resume => resume?.name === 'Experience')
   const filteredSkill = resume?.filter(resume => resume?.name === 'Skills')
 
+  useEffect(() => {
+    setTheme(localStorage.getItem('theme'))
+  }, [])
+
   return (
-    <Layout title='About' className='poryfolio-about'>
+    <Layout title='About' className={styles.poryfolio_about}>
       <Section>
         <Container>
           <Row>
@@ -131,7 +136,31 @@ const About = () => {
         </Container>
       </Section>
 
-      <Section style={{ paddingBottom: 0 }}>
+      <Section>
+        <div className={styles.portfolio_hireme}
+          style={
+            { backgroundImage: 'url("/uploads/bg_img.jpg")' }
+          }
+        >
+          <div className={`${styles.portfolio_hireme_overlay} ${theme === 'dark' ? styles.dark : ''}`} />
+          <Container>
+            <Row>
+              <Col space='12'>
+                <div className={styles.portfolio_hireme_heading_wrap}>
+                  <h2 className={styles.portfolio_hireme_heading}>I'm <span>Avaliable</span> for freelancing</h2>
+                  <Link href='https://www.upwork.com/freelancers/~01dd380cc605cafebc'>
+                    <a target='_blank'>
+                      <Button className='primary'>Hire Me</Button>
+                    </a>
+                  </Link>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      </Section>
+
+      <Section id='project' style={{ paddingBottom: 0 }}>
         <div className={styles.portfolio_project_wrapper}>
           <h2 className={styles.portfolio_project_heading}>Projects</h2>
           <p>That's what I did more projects</p>

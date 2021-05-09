@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: ${fontWeight.md};
     text-align: left;
     transition: transform .3s ease;
+    
     &.open-drawer {
       transform: translateX(-250px);
       height: 100vh;
@@ -33,9 +34,11 @@ const GlobalStyle = createGlobalStyle`
       left: 0;
       width: 100%;
       overflow-x: initial;
+
       .menu-btn {
         border: 2px solid ${colors.white} !important;
         border-radius: 50% !important;
+
         .menu-icon {
           transform: translateX(-50px) !important;
           background: transparent !important;

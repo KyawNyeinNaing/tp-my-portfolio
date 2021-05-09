@@ -1,3 +1,9 @@
+.poryfolio_about {
+  header {
+    box-shadow: var(--box-shadow);
+  }
+}
+
 .portfolio_img {
   width: 100%;
   position: relative;
@@ -224,6 +230,43 @@
           font-weight: 600;
           transition: all 0.3s ease;
         }
+      }
+    }
+  }
+}
+
+.portfolio_hireme {
+  position: relative;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 2em 0;
+
+  .portfolio_hireme_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 102, 255, 0.29);
+
+    &.dark {
+      background-color: rgba(0, 0, 0, 0.29);
+    }
+  }
+
+  .portfolio_hireme_heading_wrap {
+    text-align: center;
+
+    .portfolio_hireme_heading {
+      color: #ffffff;
+      font-size: 40px;
+      font-weight: 900;
+
+      span {
+        color: #a0f669;
       }
     }
   }
