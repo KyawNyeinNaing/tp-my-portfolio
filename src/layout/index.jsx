@@ -5,13 +5,15 @@ import { Main, Copyright, Container, Row, Col, MenuIcon } from '../components'
 import { openDrawer, closeDrawer } from '../components/utils'
 import styles from './Layout.module.scss'
 import { FcInfo } from 'react-icons/fc'
-import { MdBrightnessMedium } from 'react-icons/md'
+import { BsToggleOn, BsToggleOff } from 'react-icons/bs'
 import { FaPhoneAlt, FaMailBulk, FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa'
 
 const Layout = ({ children, title, keyword, desc, className }) => {
   const [theme, setTheme] = useState('light')
-
+  
   useEffect(() => {
+    localStorage.setItem('theme', theme)
+
     document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
     setTheme(localStorage.getItem('theme'))
 
@@ -30,7 +32,6 @@ const Layout = ({ children, title, keyword, desc, className }) => {
 
   const saveTheme = (theme) => {
     setTheme(theme)
-    localStorage.setItem('theme', theme)
     document.documentElement.setAttribute('data-theme', theme)
   }
 
@@ -71,7 +72,8 @@ const Layout = ({ children, title, keyword, desc, className }) => {
                       <Link href="/contact">Contact me</Link>
                     </li>
                     <li className={styles.themeSwitcher} onClick={switchTheme}>
-                      <MdBrightnessMedium />
+                      {theme === 'dark' && <BsToggleOn  className={styles.themeSwitcher_svg}/>}
+                      {theme === 'light' && <BsToggleOff  className={styles.themeSwitcher_svg}/>}
                     </li>
                   </ul>
                   <MenuIcon className={`menu-btn ${styles.portfolio_menu_btn}`}>

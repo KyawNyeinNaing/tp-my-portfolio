@@ -9,10 +9,8 @@ import styles from '../styles/Contact.module.scss'
 
 import { FcHome, FcCallback, FcFeedback, FcGlobe } from 'react-icons/fc'
 
-import { IoMdCall } from 'react-icons/io'
-import { GiWorld } from 'react-icons/gi'
-
 const Contact = () => {
+
   const onDataSubmit = (values, actions) => {
     actions.setSubmitting(true)
     setDisabled(true)
