@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import MessengerCustomerChat from 'react-messenger-customer-chat'
 import { useEffect, useState } from 'react'
 import { Main, Copyright, Container, Row, Col, MenuIcon } from '../components'
 import { openDrawer, closeDrawer } from '../components/utils'
@@ -140,6 +141,8 @@ const Layout = ({ children, title, keyword, desc, className }) => {
             </Row>
           </Container>
         </Copyright>
+        <MessengerCustomerChat pageId="101864742086719" appId='289516996157636'
+        />
       </footer>
     </article>
   )
