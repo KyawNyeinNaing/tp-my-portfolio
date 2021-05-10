@@ -13,15 +13,12 @@ const Layout = ({ children, title, keyword, desc, className }) => {
   const [theme, setTheme] = useState('light')
 
   useEffect(() => {
-    localStorage.setItem('theme', theme)
-
     document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
     setTheme(localStorage.getItem('theme'))
 
     window.addEventListener('openDrawer', openDrawer())
 
   }, [])
-
 
   const switchTheme = () => {
     if (theme === 'light') {
@@ -32,6 +29,7 @@ const Layout = ({ children, title, keyword, desc, className }) => {
   }
 
   const saveTheme = (theme) => {
+    localStorage.setItem('theme', theme)
     setTheme(theme)
     document.documentElement.setAttribute('data-theme', theme)
   }
@@ -141,8 +139,7 @@ const Layout = ({ children, title, keyword, desc, className }) => {
             </Row>
           </Container>
         </Copyright>
-        <MessengerCustomerChat pageId="101864742086719" appId='289516996157636'
-        />
+        <MessengerCustomerChat pageId="101864742086719" appId='289516996157636' />
       </footer>
     </article>
   )
