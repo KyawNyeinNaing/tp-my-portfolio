@@ -11,13 +11,13 @@ import { resume, projects } from '../../data'
 const About = () => {
   const [show, setShow] = useState('education')
   const [theme, setTheme] = useState()
-  let currentOffset = document.querySelector('#project')?.offsetTop - 30
-
+  
   const filteredEdu = resume?.filter(resume => resume?.name === 'Educations')
   const filteredExp = resume?.filter(resume => resume?.name === 'Experience')
   const filteredSkill = resume?.filter(resume => resume?.name === 'Skills')
-
+  
   useEffect(() => {
+    let currentOffset = document.querySelector('#project')?.offsetTop - 100
     setTheme(localStorage.getItem('theme'))
     window.scrollTo(0, currentOffset)
   }, [])

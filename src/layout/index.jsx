@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import MessengerCustomerChat from 'react-messenger-customer-chat'
 import { Main, Copyright, Container, Row, Col, MenuIcon } from '../components'
 import { openDrawer, closeDrawer } from '../components/utils'
 import styles from './Layout.module.scss'
@@ -89,6 +90,10 @@ const Layout = ({ children, title, keyword, desc, className }) => {
         {children}
       </Main>
       <footer className={styles.portfolio_footer}>
+        <MessengerCustomerChat
+          pageId="100004777263473"
+          appId='289516996157636'
+        />
         <Copyright data='Thet Pai'>
           <Container>
             <Row>
