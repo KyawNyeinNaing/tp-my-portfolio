@@ -2,7 +2,7 @@
 
 # configs
 /.babelrc
-/.next.config.js
+/.config.js
 
 # dependencies
 /node_modules
