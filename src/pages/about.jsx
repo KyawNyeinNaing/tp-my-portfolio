@@ -19,7 +19,7 @@ const About = () => {
   useEffect(() => {
     let currentOffset = document.querySelector('#project')?.offsetTop - 100
     setTheme(localStorage.getItem('theme'))
-    window.scrollTo(0, currentOffset)
+    // window.scrollTo(0, currentOffset)
   }, [])
 
   return (

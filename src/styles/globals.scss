@@ -97,3 +97,11 @@ ul {
     }
   }
 }
+
+.Toastify {
+  .Toastify__toast {
+    .Toastify__progress-bar {
+      opacity: 0 !important;
+    }
+  }
+}
